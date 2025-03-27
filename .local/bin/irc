@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SESSION="IRC"
+WINDOW_PRIVATE="irc-private"
+WINDOW_WORK="irc-work"
+
+# Check if the session already exists
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+    # Create the session and first window
+    tmux new-session -d -s "$SESSION" -n "$WINDOW_PRIVATE" env WEECHAT_HOME="$HOME/.weechat-private" weechat
+    
+    # Create second window
+    tmux new-window -t "$SESSION" -n "$WINDOW_WORK" env WEECHAT_HOME="$HOME/.weechat-work" weechat
+fi
+
+# Attach to the session
+tmux attach -t "$SESSION"
+

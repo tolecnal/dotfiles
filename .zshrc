@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 if [ -d ~/.local/bin ]; then
-	export PATH="~/.local/bin:$PATH"
+	export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Compilation flags
