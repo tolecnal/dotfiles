@@ -70,7 +70,7 @@ ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+plugins=(ansible git git-prompt eza ssh sudo virtualenv zoxide zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +106,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+zstyle ':omz:plugins:eza' 'icons' yes
+zstyle ':omz:plugins:eza' 'color-scale' all
